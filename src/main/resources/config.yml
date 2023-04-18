@@ -1,0 +1,9 @@
+xp-cost: 0.1
+spawn:
+  ==: org.bukkit.Location
+  world: world
+  x: 0
+  y: 0
+  z: 0
+  pitch: 0
+  yaw: 0

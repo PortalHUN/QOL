@@ -1,0 +1,13 @@
+name: QOL
+version: '${project.version}'
+main: com.portalhun.qol.QOL
+api-version: 1.19
+commands:
+  setspawn:
+    description: Sets world spawn
+  spawn:
+    description: Teleports to spawn
+  setwarp:
+    description: Sets warp
+  warp:
+    description: Teleports to a warp
