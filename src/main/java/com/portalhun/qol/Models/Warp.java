@@ -1,5 +1,6 @@
 package com.portalhun.qol.Models;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 
@@ -22,5 +23,9 @@ public class Warp {
     Name = name;
     Loc = new LocationModel(loc);
     Item = Material.POINTED_DRIPSTONE;
+  }
+
+  public Location getLocation(){
+    return new Location(Bukkit.getWorld(Loc.world), Loc.x, Loc.y, Loc.z, Loc.yaw, Loc.pitch);
   }
 }

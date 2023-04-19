@@ -18,7 +18,7 @@ public class OnPlayerCraftEvent implements Listener {
     @EventHandler
     public void onPlayerCraftEvent(CraftItemEvent e){
         Player p = (Player) e.getView().getPlayer();
-        if(e.getRecipe().getResult().getItemMeta().equals(TeleportCompassItem.getTeleportCompass().getItemMeta())){
+        if(e.getRecipe().getResult().getItemMeta().equals(TeleportCompassItem.get(pl).getItemMeta())){
             Location loc = pl.getConfig().getLocation("spawn");
             if(loc !=null) p.setCompassTarget(loc);
         }

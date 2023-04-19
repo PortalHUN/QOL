@@ -13,7 +13,7 @@ public class TeleportCompassRecipe {
     public TeleportCompassRecipe(QOL pl){
         this.pl = pl;
         NamespacedKey key = new NamespacedKey(pl, "teleport_compass");
-        ShapedRecipe s = new ShapedRecipe(key, TeleportCompassItem.getTeleportCompass());
+        ShapedRecipe s = new ShapedRecipe(key, TeleportCompassItem.get(pl));
         s.shape(
                 "III",
                 "IEI",

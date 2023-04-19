@@ -1,6 +1,7 @@
 package com.portalhun.qol;
 
 import com.portalhun.qol.Commands.*;
+import com.portalhun.qol.Events.OnPlayerClickActionEvent;
 import com.portalhun.qol.Events.OnPlayerCraftEvent;
 import com.portalhun.qol.Events.OnPlayerDeathEvent;
 import com.portalhun.qol.Events.OnPlayerRespawnEvent;
@@ -38,6 +39,8 @@ public final class QOL extends JavaPlugin {
       getServer().getPluginManager().registerEvents(new OnPlayerRespawnEvent(this),this);
       getServer().getPluginManager().registerEvents(new OnPlayerDeathEvent(),this);
       getServer().getPluginManager().registerEvents(new OnPlayerCraftEvent(this),this);
+      getServer().getPluginManager().registerEvents(new OnPlayerClickActionEvent(this),this);
+
 
 
       //Recipes

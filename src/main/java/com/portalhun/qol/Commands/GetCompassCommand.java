@@ -20,7 +20,7 @@ public class GetCompassCommand implements CommandExecutor {
             Location loc = pl.getConfig().getLocation("spawn");
             if(loc !=null)
                 p.setCompassTarget(loc);
-            p.getInventory().addItem(TeleportCompassItem.getTeleportCompass());
+            p.getInventory().addItem(TeleportCompassItem.get(pl));
             p.sendRawMessage(ChatColor.BLUE+"Here is your compass.");
         }else{
             sender.sendMessage(ChatColor.RED+"You can't do that.");
