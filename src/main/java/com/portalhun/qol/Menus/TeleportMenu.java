@@ -16,8 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TeleportMenu {
+    public static String Name = ChatColor.LIGHT_PURPLE+"Teleporter";
     public static void Open(Player p){
-        Inventory inv = Bukkit.createInventory(p, 54, ChatColor.LIGHT_PURPLE+"Teleporter");
+        Inventory inv = Bukkit.createInventory(p, 54, Name);
         List<Warp> w = WarpStorage.getAllWarps();
         for (Warp warp : w) {
             Location l = warp.getLocation();

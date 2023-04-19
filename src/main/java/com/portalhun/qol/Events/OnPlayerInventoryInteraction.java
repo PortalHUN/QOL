@@ -1,5 +1,6 @@
 package com.portalhun.qol.Events;
 
+import com.portalhun.qol.Menus.TeleportMenu;
 import com.portalhun.qol.QOL;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -16,7 +17,7 @@ public class OnPlayerInventoryInteraction implements Listener {
     @EventHandler
     public void onPlayerInventoryInteraction(InventoryClickEvent e){
         Player p = (Player) e.getView().getPlayer();
-        if(e.getView().getTitle().equals(ChatColor.LIGHT_PURPLE+"Teleporter")){
+        if(e.getView().getTitle().equals(TeleportMenu.Name)){
             e.setCancelled(true);
         }
     }
