@@ -11,3 +11,5 @@ commands:
     description: Sets warp
   warp:
     description: Teleports to a warp
+  getcompass:
+    description: Gives you the teleporter compass

@@ -1,9 +1,6 @@
 package com.portalhun.qol;
 
-import com.portalhun.qol.Commands.SetSpawnCommand;
-import com.portalhun.qol.Commands.SetWarpCommand;
-import com.portalhun.qol.Commands.SpawnCommand;
-import com.portalhun.qol.Commands.WarpCommand;
+import com.portalhun.qol.Commands.*;
 import com.portalhun.qol.Events.OnPlayerDeathEvent;
 import com.portalhun.qol.Events.OnPlayerRespawnEvent;
 import com.portalhun.qol.Storage.WarpStorage;
@@ -30,6 +27,7 @@ public final class QOL extends JavaPlugin {
       getCommand("spawn").setExecutor(new SpawnCommand(this));
       getCommand("setwarp").setExecutor(new SetWarpCommand());
       getCommand("warp").setExecutor(new WarpCommand(this));
+      getCommand("getcompass").setExecutor(new GetCompassCommand());
 
 
       //Events
