@@ -20,6 +20,7 @@ public class TeleportCompassItem {
         List<String> lore = new ArrayList<String>();
         lore.add(ChatColor.BLUE + "Teleports you across worlds.");
         meta.setLore(lore);
+        a.setItemMeta(meta);
 
         return a;
     }

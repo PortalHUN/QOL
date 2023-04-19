@@ -1,6 +1,7 @@
 package com.portalhun.qol;
 
 import com.portalhun.qol.Commands.*;
+import com.portalhun.qol.Events.OnPlayerCraftEvent;
 import com.portalhun.qol.Events.OnPlayerDeathEvent;
 import com.portalhun.qol.Events.OnPlayerRespawnEvent;
 import com.portalhun.qol.Recipes.TeleportCompassRecipe;
@@ -30,12 +31,13 @@ public final class QOL extends JavaPlugin {
       getCommand("spawn").setExecutor(new SpawnCommand(this));
       getCommand("setwarp").setExecutor(new SetWarpCommand());
       getCommand("warp").setExecutor(new WarpCommand(this));
-      getCommand("getcompass").setExecutor(new GetCompassCommand());
+      getCommand("getcompass").setExecutor(new GetCompassCommand(this));
 
 
       //Events
       getServer().getPluginManager().registerEvents(new OnPlayerRespawnEvent(this),this);
       getServer().getPluginManager().registerEvents(new OnPlayerDeathEvent(),this);
+      getServer().getPluginManager().registerEvents(new OnPlayerCraftEvent(this),this);
 
 
       //Recipes

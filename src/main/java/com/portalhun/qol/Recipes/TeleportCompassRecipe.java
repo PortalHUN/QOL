@@ -15,9 +15,9 @@ public class TeleportCompassRecipe {
         NamespacedKey key = new NamespacedKey(pl, "teleport_compass");
         ShapedRecipe s = new ShapedRecipe(key, TeleportCompassItem.getTeleportCompass());
         s.shape(
-                "I I I",
-                "I E I",
-                "I I I"
+                "III",
+                "IEI",
+                "III"
         );
         s.setIngredient('I', Material.IRON_INGOT);
         s.setIngredient('E', Material.ENDER_PEARL);
