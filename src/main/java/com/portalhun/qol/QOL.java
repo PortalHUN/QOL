@@ -28,8 +28,6 @@ public final class QOL extends JavaPlugin {
       getCommand("setspawn").setExecutor(new SetSpawnCommand(this));
       getCommand("spawn").setExecutor(new SpawnCommand(this));
       getCommand("setwarp").setExecutor(new SetWarpCommand());
-      getCommand("warp").setExecutor(new WarpCommand(this));
-      getCommand("getcompass").setExecutor(new GetCompassCommand(this));
 
 
       //Events
@@ -38,8 +36,6 @@ public final class QOL extends JavaPlugin {
       getServer().getPluginManager().registerEvents(new OnPlayerCraftEvent(this),this);
       getServer().getPluginManager().registerEvents(new OnPlayerClickActionEvent(this),this);
       getServer().getPluginManager().registerEvents(new OnPlayerInventoryInteraction(this),this);
-
-
 
 
       //Recipes

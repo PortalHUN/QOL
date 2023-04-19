@@ -17,7 +17,7 @@ public class OnPlayerClickActionEvent implements Listener {
     public void onPlayerClickActionEvent(PlayerInteractEvent e){
         if(e.getItem() != null){
             if(e.getItem().equals(TeleportCompassItem.get(pl))&& (e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK))){
-                TeleportMenu.Open(e.getPlayer());
+                TeleportMenu.Open(pl, e.getPlayer());
             }
         }
     }

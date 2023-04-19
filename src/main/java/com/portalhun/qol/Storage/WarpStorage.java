@@ -41,18 +41,11 @@ public class WarpStorage {
   }
 
   public static Warp deleteWarp(String name) throws IOException {
-    int cv=0;
-    while(warps.get(cv).Name.equalsIgnoreCase(name))
-      cv++;
-
-    if(warps.size() < cv-1){
-      Warp w = warps.get(cv);
-      warps.remove(cv);
-      saveWarps();
+    Warp w = findWarpByName(name);
+    if(w != null){
+      warps.remove(w);
       return w;
-    }else{
-      return null;
-    }
+    }else return null;
   }
 
   public static Warp updateWarp(Warp w) throws IOException {
