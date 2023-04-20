@@ -15,6 +15,7 @@ public class CreateWarpItem {
         meta.setDisplayName(ChatColor.GREEN+""+ChatColor.BOLD+"New Warp");
         List<String> lore = new ArrayList<String>();
         lore.add(ChatColor.BLUE+"Click here to add a new Warp");
+        lore.add(ChatColor.RED+"Cost: 3 Levels");
         meta.setLore(lore);
         i.setItemMeta(meta);
         return i;

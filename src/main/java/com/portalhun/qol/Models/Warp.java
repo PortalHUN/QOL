@@ -87,6 +87,7 @@ public class Warp {
     lore.add(ChatColor.RED+l.getWorld().getName());
     meta.setLore(lore);
     meta.addEnchant(Enchantment.OXYGEN, 1, false);
+    meta.addEnchant(Enchantment.LUCK, 1, false);
     item.setItemMeta(meta);
     return item;
   }

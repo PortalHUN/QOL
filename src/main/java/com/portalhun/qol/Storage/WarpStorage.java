@@ -14,9 +14,10 @@ import java.util.List;
 public class WarpStorage {
 
   public static ArrayList<Warp> warps = new ArrayList<>();
-  public static Warp createWarp(String Name, Location loc) {
+  public static Warp createWarp(String Name, Location loc) throws IOException {
     Warp w = new Warp(Name, loc);
     warps.add(w);
+    saveWarps();
     return w;
   }
 
@@ -36,6 +37,15 @@ public class WarpStorage {
     return null;
   }
 
+  public static int findIndexByName(String name){
+    for (int i=0; i<warps.size();i++){
+      if(warps.get(i).Name.equalsIgnoreCase(name)){
+        return i;
+      }
+    }
+    return -1;
+  }
+
   public static List<Warp> getAllWarps(){
     return warps;
   }
@@ -44,24 +54,29 @@ public class WarpStorage {
     Warp w = findWarpByName(name);
     if(w != null){
       warps.remove(w);
+      saveWarps();
       return w;
     }else return null;
   }
 
   public static Warp updateWarp(Warp w) throws IOException {
-    int cv=0;
-    while(warps.get(cv).Name.equalsIgnoreCase(w.Name))
-      cv++;
-
-    if(warps.size() < cv-1){
-      warps.get(cv).Item = w.Item;
-      warps.get(cv).Loc = w.Loc;
+    int i = findIndexByName(w.Name);
+    if(i!=-1){
+      warps.set(i, w);
       saveWarps();
       return w;
-    }else{
-      return null;
-    }
+    }else return null;
+  }
 
+  public static Warp updateWarpName(String oName, String nName) throws IOException {
+    int i = findIndexByName(oName);
+    if(i!=-1){
+      Warp w = warps.get(i);
+      w.Name = nName;
+      warps.set(i, w);
+      saveWarps();
+      return w;
+    }else return null;
   }
 
   public static void saveWarps() throws IOException {

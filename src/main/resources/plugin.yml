@@ -5,7 +5,3 @@ api-version: 1.19
 commands:
   setspawn:
     description: Sets world spawn
-  spawn:
-    description: Teleports to spawn
-  setwarp:
-    description: Sets warp

@@ -2,6 +2,7 @@ package com.portalhun.qol;
 
 import com.portalhun.qol.Commands.*;
 import com.portalhun.qol.Events.*;
+import com.portalhun.qol.Menus.UpdateWarpIconMenu;
 import com.portalhun.qol.Recipes.TeleportCompassRecipe;
 import com.portalhun.qol.Storage.WarpStorage;
 import org.bukkit.Bukkit;
@@ -16,7 +17,6 @@ public final class QOL extends JavaPlugin {
   //Teleport scroll for XP cap
 
   private static QOL plugin;
-
   @Override
     public void onEnable() {
       //Config
@@ -26,8 +26,6 @@ public final class QOL extends JavaPlugin {
 
       //Commands
       getCommand("setspawn").setExecutor(new SetSpawnCommand(this));
-      getCommand("spawn").setExecutor(new SpawnCommand(this));
-      getCommand("setwarp").setExecutor(new SetWarpCommand());
 
 
       //Events
@@ -36,11 +34,12 @@ public final class QOL extends JavaPlugin {
       getServer().getPluginManager().registerEvents(new OnPlayerCraftEvent(this),this);
       getServer().getPluginManager().registerEvents(new OnPlayerClickActionEvent(this),this);
       getServer().getPluginManager().registerEvents(new OnPlayerInventoryInteraction(this),this);
+      getServer().getPluginManager().registerEvents(new OnPlayerChatEvent(this),this);
+
 
 
       //Recipes
       new TeleportCompassRecipe(plugin);
-
 
       //Load Warps
       try {
